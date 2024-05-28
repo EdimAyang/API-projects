@@ -81,7 +81,8 @@ input::placeholder{
 
 .select-box{
     padding: 30px;
-    width: 50%;
+    width: 60%;
+    margin-left: -10px;
 }
 
 .selected{
@@ -96,7 +97,7 @@ input::placeholder{
     background-color: var(--secondary-color);
     color: var(--primary-color);
     max-height: 0;
-    width: 37%;
+    width: 45%;
     opacity:0 ;
     transition: all 0.4s;
     border-radius: 8px;
@@ -110,7 +111,7 @@ input::placeholder{
 }
 
 .options ,.selected{
-    padding: 12px 24px;
+    padding: 12px 20px;
     cursor: pointer;
 }
 
