@@ -15,7 +15,7 @@
     <header>
         <h3>Where in the world?</h3>
 
-          <p><span><i class="fa-solid fa-moon" id="theme"></i></span> Dark Mode</p>
+          <p id="theme"></span><i class="fa-solid fa-moon"></i></span> Dark Mode</p>
     </header>
 
 
@@ -27,28 +27,44 @@
             
             
             
-            <select name="filter" id="filter">
-                <div></div>
-                <option value="">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
+                <div class="select-box">
+                    <div class="selected">
+                        Filter by Region
+                    </div>
+                        
+                    <div class="options-container ">
+                        <div class="options">
+                            <input type="radio" name="category" id="Africa" class="radio">
+                            <label for="Africa">Africa</label>
+                            
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="category" id="Asia" class="radio">
+                            <label for="Asia">Asia</label>
+                            
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="category" id="Europe" class="radio">
+                            <label for="Europe">Europe</label>
+                            
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="category" id="Oceania" class="radio">
+                            <label for="Oceabia">Oceania</label>
+                            
+                        </div>
+                        <div class="options">
+                            <input type="radio" name="category" id="Americas" class="radio">
+                            <label for="Americas">Americas</label>
+                            
+                        </div>
+                    </div>
+                </div>
 
         </div>
     
     <div id="cardsWrapper">
-        <div id="card" >
-            <img src="" alt="" id="flags">
-
-            <div id="countryInfo" class="countryInfo">
-                <h3 id="country"></h3>
-                <p>Population: <span id="population"></span></p>
-                <p>Region: <span id="region"></span></p>
-                <p>Capital: <span id="capital"></span></p>
-            </div>
-        </div>
+        
     </div>
 
     <script src="/script.js"></script>

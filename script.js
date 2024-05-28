@@ -6,45 +6,110 @@ const population = document.getElementById("population");
 const region = document.getElementById("region");
 const capital = document.getElementById("capital");
 const cardsWrapper = document.getElementById("cardsWrapper");
+const searchInput = document.getElementById("searchInput");
+const glassIcon = document.getElementById("glassIcon");
+const selected = document.querySelector(".selected");
+const optionsContainer = document.querySelector(".options-container");
+const optionList = document.querySelectorAll(".options");
+
+selected.addEventListener("click", ()=>{
+    optionsContainer.classList.toggle("active");
+})
+
+optionList.forEach((o) =>{
+    o.addEventListener("click", ()=>{
+    selected.innerHTML = o.querySelector("label").innerHTML;
+    optionsContainer.classList.remove("active");
+    filteredRegion(o);
+  })
+    
+    
+
+})
 
 
-/*const Data= fetch(requestUrl)
-.then(response => response.json())  
-.then(data =>{
-    data.forEach((d) => {
-        cardGenerator(d);
-    })
-});*/
+const filteredRegion = (o) =>{
+    let  Label = selected.innerHTML = o.querySelector("label").innerHTML;
+        let filteredCountries = data.filter(countries =>{
+            return (
+              countries.region.includes(Label)
+            );
+          });
+          displayCountries(filteredCountries)
+    
+};
 
-fetch(requestUrl)
+searchInput.addEventListener("keyup", (e) =>{
+    let searchQuery =(e.target.value.toLowerCase());
+   let filteredCountries = data.filter(countries =>{
+      return (
+        countries.name.common.toLowerCase().includes(searchQuery)
+      );
+    });
+    displayCountries(filteredCountries)
+});
+
+
+const loadCountries =async () => {
+    try {
+        const response = await fetch(requestUrl);
+        data = await response.json();
+        displayCountries(data);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+loadCountries()
+   
+   const displayCountries =(countries) => {
+        const htmlString = countries
+        .map((countries)=>{
+            return`
+            <div id="card" >
+            <img src="${countries.flags.png}" alt="" id="flags">
+            <div id="countryInfo" class="countryInfo">
+                <h3 id="country">${countries.name.common}</h3>
+                <p>Population: <span id="population">${countries.population}</span></p>
+                <p>Region: <span id="region">${countries.region}</span></p>
+                <p>Capital: <span id="capital">${countries.capital}</span></p>
+            </div>
+            </div>
+            `;
+        })
+        .join(" ");
+        cardsWrapper.innerHTML = htmlString;
+   };
+
+   
+
+   const theme = document.getElementById("theme")
+
+   theme.onclick=() =>{
+   document.body.classList.toggle("darkTheme");
+   
+   }
+
+
+
+/*fetch(requestUrl)
 .then(response => response.json())  
 .then(  (data) =>{
     data.forEach((d) => {
         cardGenerator(d);
     })
 
-    searchInput.addEventListener("keyup", (e) =>{
-        const searchQuery = e.target.value;
-        filtered =data.filter(countries =>{
-          return  countries.contains(searchQuery);
-        });
-        console.log(filtered)
-     })
+  data.filter((d) =>{
+        glassIcon.addEventListener("click", searchFunc);
 
-});
-
-const theme = document.getElementById("theme")
-
-theme.onclick=() =>{
-document.body.classList.toggle("darkTheme");
-
-}
-
-const searchInput = document.getElementById("searchInput");
-const glassIcon = document.getElementById("glassIcon");
+    });
+    
+});*/
 
 
-cardGenerator = (d) =>{
+
+
+/*cardGenerator = (d) =>{
 const card2 = document.createElement("div");
 const image =document.createElement("img");
 const Info =document.createElement("div");
@@ -76,7 +141,7 @@ card2.append(image)
 card2.append(Info);
 card2.classList.add("cards");
 cardsWrapper.append(card2);
-}
+}*/
 
 
 

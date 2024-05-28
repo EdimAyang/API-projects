@@ -23,6 +23,10 @@ body{
     transition: 1000ms ease-out;
 }
 
+#theme{
+    cursor: pointer;
+}
+
 header{
     width: 100%;
     height: 70px;
@@ -64,7 +68,7 @@ input{
 
 .fa-magnifying-glass{
     position: absolute;
-    top: 25%;
+    top: 19%;
     left: 9%;
     cursor: pointer;
     color: var(--primary-color);
@@ -74,22 +78,52 @@ input::placeholder{
     color: var(--primary-color);
 }
 
-#search_filter select{
+
+.select-box{
+    padding: 30px;
     width: 50%;
-    margin-top: 20px;
-    margin-left: 5%;
-    border-radius: 10px;
-    outline: none;
-    border: none;
+}
+
+.selected{
+    margin-bottom: 10px;
+    border-radius: 8px;
     box-shadow: 0 0 30px rgb(0, 0, 0, .2);
-    height: 50px;
-    padding-left: 20px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
+.options-container{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    max-height: 0;
+    width: 37%;
+    opacity:0 ;
+    transition: all 0.4s;
+    border-radius: 8px;
+    position: absolute;
+    box-shadow: 0 0 30px rgb(0, 0, 0, .2);
+}
 
+.select-box .options-container.active{
+    max-height: 250px;
+    opacity: 1;
+}
 
+.options ,.selected{
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.select-box .options:hover{
+    background-color: #414b57;
+}
+.select-box .options .radio{
+    display: none
+}
+
+.select-box label{
+    cursor: pointer;
+}
 
 #cardsWrapper{
     width: 75%;
@@ -106,16 +140,7 @@ input::placeholder{
     box-shadow: 0 0 30px rgb(0, 0, 0, .2);
     margin-top: 20px;
     color: var(--primary-color);
-    display: none;
-}
 
-.cards{
-    width: 100%;
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgb(0, 0, 0, .2);
-    margin-top: 25px;
-    color: var(--primary-color);
 }
 
 img{
@@ -219,7 +244,7 @@ span{
     
     .fa-magnifying-glass{
         position: absolute;
-        top: 50%;
+        top: 33%;
         left: 2%;
         cursor: pointer;
         color: var(--primary-color);
@@ -229,20 +254,52 @@ span{
         cursor: pointer;
     }
 
-
-    #search_filter select{
-        width: 20%;
-        margin-top: 20px;
-        margin-left: 5%;
-        border-radius: 10px;
-        outline: none;
-        border: none;
+    .select-box{
+        padding: 30px;
+        width: 30%;
+    }
+    
+    .selected{
+        margin-bottom: 10px;
+        border-radius: 8px;
         box-shadow: 0 0 30px rgb(0, 0, 0, .2);
-        height: 50px;
-        padding-left: 20px;
         background-color: var(--secondary-color);
         color: var(--primary-color);
     }
+    
+    .options-container{
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        max-height: 0;
+        width: 25%;
+        opacity:0 ;
+        transition: all 0.4s;
+        border-radius: 8px;
+        position: absolute;
+        box-shadow: 0 0 30px rgb(0, 0, 0, .2);
+    }
+    
+    .select-box .options-container.active{
+        max-height: 250px;
+        opacity: 1;
+    }
+    
+    .options ,.selected{
+        padding: 12px 24px;
+        cursor: pointer;
+    }
+    
+    .select-box .options:hover{
+        background-color: #414b57;
+    }
+    .select-box .options .radio{
+        display: none
+    }
+    
+    .select-box label{
+        cursor: pointer;
+    }
+    
     
     
     
@@ -263,16 +320,9 @@ span{
         border-radius: 10px;
         box-shadow: 0 0 30px rgb(0, 0, 0, .2);
         color: var(--primary-color);
-        display: none;
+        
     }
-    
-    .cards{
-        width: 100%;
-        height: 420px;
-        border-radius: 10px;
-        box-shadow: 0 0 30px rgb(0, 0, 0, .2);
-        color: var(--primary-color);
-    }
+
     
     img{
         width: 100%;
