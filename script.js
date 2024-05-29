@@ -89,10 +89,16 @@ loadCountries()
         cardsWrapper.innerHTML = htmlString;
    };
 
-   
-window.addEventListener("load", ()=>{
+
+
+const loadd =() =>{
+  window.addEventListener("load", ()=>{
     loader.style.display ="none";
-});
+})
+};
+
+loadd();
+
    /*const displayInfo =(countries) =>{
         const htmlString = countries
         .map((countries)=>{
