@@ -25,10 +25,15 @@ optionList.forEach((o) =>{
     filteredRegion(o);
   })
     
-    
-
 })
 
+
+   
+const theme = document.getElementById("theme")
+theme.onclick=() =>{
+document.body.classList.toggle("darkTheme");
+   
+}
 
 const filteredRegion = (o) =>{
     let  Label = selected.innerHTML = o.querySelector("label").innerHTML;
@@ -77,6 +82,7 @@ loadCountries()
                 <p>Capital: <span id="capital">${countries.capital}</span></p>
             </div>
             </div>
+        
             `;
         })
         .join(" ");
@@ -118,14 +124,7 @@ window.addEventListener("load", ()=>{
         cardsWrapper.innerHTML = htmlString;
    };*/
 
-   
 
-   const theme = document.getElementById("theme")
-
-   theme.onclick=() =>{
-   document.body.classList.toggle("darkTheme");
-   
-   }
 
 
 
