@@ -45,7 +45,7 @@ header{
 
 #btn{
     position: relative;
-    margin-top: 40%;
+    margin-top: 20%;
     padding: 5px 30px 5px 30px;
     box-shadow: 0 0 30px rgb(0, 0, 0, .2);
     background-color: #ffff;
@@ -148,6 +148,14 @@ input::placeholder{
     
 }
 
+#cardsWrapper2{
+    width: 90%;
+    height: 100vh;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+}
+
 #btn{
     display: none;
 }
@@ -164,7 +172,7 @@ input::placeholder{
 
 #card2{
     width: 100%;
-    height: 800px;
+    height: 750px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgb(0, 0, 0, .2);
     margin-top: 20px;
@@ -245,15 +253,16 @@ span{
 }
 
 #preLoader{
-    background: #000 url(/spin7.gif); 
+    background: url(/3d6aa9082f3c9e285df9970dc7b762ac.gif); 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 200px;
+    background-size: 400px;
     width: 100%;
     height: 100vh;
     position:fixed;
     top: 0;
     z-index: 100;
+    
 }
 
 
@@ -281,10 +290,10 @@ span{
 
 
     #preLoader{
-    background: #000 url(/spin7.gif); 
+    background: url(/3d6aa9082f3c9e285df9970dc7b762ac.gif); 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 200px;
+    background-size: 500px;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -402,16 +411,18 @@ span{
         color: var(--primary-color);
     }
 
-    /*#cardsWrapper2{
+    #cardsWrapper2{
         width: 90%;
         height: 100vh;
         display: flex;
         margin:5% auto;
         display: flex;
+        justify-content: center;
+        align-items: center;
         
     }
 
-    /*#card2{
+    #card2{
         width: 100%;
         height: 100vh;
         border-radius: 10px;
@@ -419,7 +430,7 @@ span{
         color: var(--primary-color);
         border: 1px solid;
         display: flex;
-    }*/
+    }
 
     
     img{
@@ -469,4 +480,53 @@ span{
         font-weight: 500;
     }
 
+
+
+     
+#cardWrapper2 img{
+    width: 100%;
+    height: 230px;
+    border-radius: 10px 10px 0px 0px;
+    
+}
+
+span{
+    font-weight: 400;
+}
+
+#countryInfo2{
+    padding: 20px;
+}
+
+#countryInfo2  h3{
+    font-weight:700;
+    font-size: 20px;
+    margin-top: 15px;
+    
+}
+
+#countryInfo2 p{
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+span{
+    font-weight: 400;
+}
+
+.countryInfo2{
+    padding: 20px;
+}
+
+.H3{
+    font-weight:700;
+    font-size: 20px;
+    margin-top: 15px;
+    
+}
+
+.countryInfo2 p{
+    margin-top: 10px;
+    font-weight: 500;
+}
 }

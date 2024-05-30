@@ -57,7 +57,8 @@ const loadCountries =async () => {
     try {
         const response = await fetch(requestUrl);
         data = await response.json();
-        displayCountries(data);
+        const objectValues = Object.values(data);
+        displayCountries(objectValues);
     } catch (error) {
         console.log(error);
     }
@@ -109,16 +110,18 @@ searchInput.addEventListener("keyup",(e) =>{
     
     });
     displayCountries(filteredCountries)
+    glassIcon.addEventListener("click",()=>{
+        displayInfo(filteredCountries)
+        searchFilter.style.display="none";
+        button.style.display="block";
+        cardsWrapper.style.display="none";
+        cardsWrapper2.style.display="block";
+    })
+    
 });
 
-//glassIcon.addEventListener("click",()=>{
-    //displayCountries(filteredCountries)
-    //searchFilter.style.display="none";
-    //button.style.display="block";
-    //cardsWrapper.style.display="none"
-//});
 
-    /*const displayInfo =(countries) =>{
+    const displayInfo =(countries) =>{
         const htmlString = countries
         .map((countries)=>{
             return`
@@ -126,19 +129,19 @@ searchInput.addEventListener("keyup",(e) =>{
     <img src="${countries.flags.png}" alt="" id="flags">
     <div id="countryInfo" class="countryInfo">
         <h3 id="country">${countries.name.common}</h3>
-        <p>Native Name: <span>${countries.name.common.nativeName}</span></p>
+        <p>Native Name: <span>${countries.nativeNames}</span></p>
         <p>Population: <span id="population">${countries.population}</span></p>
         <p>Region: <span id="region">${countries.region}</span></p>
         <p>Sub Region: <span>${countries.subregion}</span></p>
         <p>Capital: <span id="capital">${countries.capital}</span></p>
         <p class="para">Top Level Domain: <span>b${countries.tld}</span></p>
-        <p>Currencies: <span>${countries.currencies}</span></p>
+        <p>Currencies: <span>${countries.currencies}</span> <span>${countries.currencies.symbol}</span></p>
         <p>Languages: <span>${countries.languages}</span></p>
         <h4>Border Countries:</h4>
         <div  class="borders">
-            <div>${countries.borders}</div>
-            <div>${countries.borderd}</div>
-            <div>${countries.borders}</div>
+            <div>${countries.borders[0]}</div>
+            <div>${countries.borders[1]}</div>
+            <div>${countries.borders[2]}</div>
         </div>
     </div>
 </div>
@@ -147,36 +150,10 @@ searchInput.addEventListener("keyup",(e) =>{
         })
         .join(" ");
         cardsWrapper2.innerHTML = htmlString;
-   };*/
+   };
 
 
 
-
-   
-
- 
-    
-
-   
-
-
-
-
-
-
-/*fetch(requestUrl)
-.then(response => response.json())  
-.then(  (data) =>{
-    data.forEach((d) => {
-        cardGenerator(d);
-    })
-
-  data.filter((d) =>{
-        glassIcon.addEventListener("click", searchFunc);
-
-    });
-    
-});*/
 
 
 
