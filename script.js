@@ -41,11 +41,11 @@ document.body.classList.toggle("darkTheme");
 }
 
 
-const loadd =() =>{
+
     window.addEventListener("load", ()=>{
       loader.style.display ="none";
   })
-  };
+
   
 
 const filteredRegion = (o) =>{
@@ -70,7 +70,7 @@ const loadCountries =async () => {
     } catch (error) {
         console.log(error);
     }
-    loadd()
+
 };
 
 loadCountries()

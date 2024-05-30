@@ -253,7 +253,7 @@ span{
 }
 
 #preLoader{
-    background: url(/3d6aa9082f3c9e285df9970dc7b762ac.gif); 
+    background: rgb(0, 0, 0, .6) url(/3d6aa9082f3c9e285df9970dc7b762ac.gif); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: 400px;
@@ -290,7 +290,7 @@ span{
 
 
     #preLoader{
-    background: url(/3d6aa9082f3c9e285df9970dc7b762ac.gif); 
+    background:rgb(0, 0, 0, .6) url(/3d6aa9082f3c9e285df9970dc7b762ac.gif); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: 500px;
