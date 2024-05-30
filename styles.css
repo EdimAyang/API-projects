@@ -43,15 +43,16 @@ header{
     z-index: 10000;
 }
 
-button{
+#btn{
     position: relative;
-    margin-top: 20%;
+    margin-top: 40%;
     padding: 5px 30px 5px 30px;
     box-shadow: 0 0 30px rgb(0, 0, 0, .2);
     background-color: #ffff;
     border-radius: 4px;
     border: none;
     margin-left: 20px;
+    display: none;
 }
 
 
@@ -139,13 +140,18 @@ input::placeholder{
 }
 
 #cardsWrapper{
-    width: 75%;
+    width: 90%;
     height: 100vh;
     margin: 10% auto;
     display: flex;
     flex-direction: column;
     
 }
+
+#btn{
+    display: none;
+}
+
 #card{
     width: 100%;
     height: 500px;
@@ -255,6 +261,7 @@ span{
 
     body{
         background: var(--secondary-color);
+        width: 100%;
     }
 
     header{
@@ -272,17 +279,17 @@ span{
         z-index: 10000;
     }
 
+
     #preLoader{
-        background: #000 url(/spin7.gif); 
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 200px;
-        width: 100%;
-        height: 100vh;
-        position:fixed;
-        top: 0%;
-        z-index: 100;
-    }
+    background: #000 url(/spin7.gif); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
 
     
     #search_filter{
@@ -384,16 +391,35 @@ span{
         grid-auto-rows: auto;
         column-gap: 35px;
         margin:5% auto;
-        
+    
     }
+
     #card{
         width: 100%;
         height: 420px;
         border-radius: 10px;
         box-shadow: 0 0 30px rgb(0, 0, 0, .2);
         color: var(--primary-color);
+    }
+
+    /*#cardsWrapper2{
+        width: 90%;
+        height: 100vh;
+        display: flex;
+        margin:5% auto;
+        display: flex;
         
     }
+
+    /*#card2{
+        width: 100%;
+        height: 100vh;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgb(0, 0, 0, .2);
+        color: var(--primary-color);
+        border: 1px solid;
+        display: flex;
+    }*/
 
     
     img{
@@ -442,4 +468,5 @@ span{
         margin-top: 10px;
         font-weight: 500;
     }
+
 }

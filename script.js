@@ -1,17 +1,22 @@
 const requestUrl ="https://restcountries.com/v3.1/all";
 const card = document.getElementById("card");
+const card2 = document.getElementById("card2");
 const flag = document.getElementById("flags");
 const country = document.getElementById("country");
 const population = document.getElementById("population");
 const region = document.getElementById("region");
 const capital = document.getElementById("capital");
 const cardsWrapper = document.getElementById("cardsWrapper");
+const cardsWrapper2 = document.getElementById("cardsWrapper2");
 const searchInput = document.getElementById("searchInput");
 const glassIcon = document.getElementById("glassIcon");
 const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options-container");
 const optionList = document.querySelectorAll(".options");
 let loader = document.querySelector("#preLoader");
+const searchFilter = document.querySelector("#search_filter");
+const button = document.querySelector("#btn");
+let my_url = "/info.html";
 
 
 selected.addEventListener("click", ()=>{
@@ -46,15 +51,6 @@ const filteredRegion = (o) =>{
     
 };
 
-searchInput.addEventListener("keyup", (e) =>{
-    let searchQuery =(e.target.value.toLowerCase());
-   let filteredCountries = data.filter(countries =>{
-      return (
-        countries.name.common.toLowerCase().includes(searchQuery)
-      );
-    });
-    displayCountries(filteredCountries)
-});
 
 
 const loadCountries =async () => {
@@ -65,14 +61,19 @@ const loadCountries =async () => {
     } catch (error) {
         console.log(error);
     }
+    loadd()
 };
 
 loadCountries()
+
+
    
    const displayCountries =(countries) => {
         const htmlString = countries
         .map((countries)=>{
             return`
+
+
             <div id="card" >
             <img src="${countries.flags.png}" alt="" id="flags">
             <div id="countryInfo" class="countryInfo">
@@ -82,6 +83,7 @@ loadCountries()
                 <p>Capital: <span id="capital">${countries.capital}</span></p>
             </div>
             </div>
+            
         
             `;
         })
@@ -89,7 +91,7 @@ loadCountries()
         cardsWrapper.innerHTML = htmlString;
    };
 
-
+   
 
 const loadd =() =>{
   window.addEventListener("load", ()=>{
@@ -97,9 +99,26 @@ const loadd =() =>{
 })
 };
 
-loadd();
 
-   /*const displayInfo =(countries) =>{
+searchInput.addEventListener("keyup",(e) =>{
+    let searchQuery =(e.target.value.toLowerCase());
+   let filteredCountries = data.filter(countries =>{
+      return (
+        countries.name.common.toLowerCase().includes(searchQuery)
+      );
+    
+    });
+    displayCountries(filteredCountries)
+});
+
+//glassIcon.addEventListener("click",()=>{
+    //displayCountries(filteredCountries)
+    //searchFilter.style.display="none";
+    //button.style.display="block";
+    //cardsWrapper.style.display="none"
+//});
+
+    /*const displayInfo =(countries) =>{
         const htmlString = countries
         .map((countries)=>{
             return`
@@ -127,8 +146,19 @@ loadd();
             `;
         })
         .join(" ");
-        cardsWrapper.innerHTML = htmlString;
+        cardsWrapper2.innerHTML = htmlString;
    };*/
+
+
+
+
+   
+
+ 
+    
+
+   
+
 
 
 
