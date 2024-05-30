@@ -43,7 +43,11 @@ document.body.classList.toggle("darkTheme");
 
 
     window.addEventListener("load", ()=>{
-      loader.style.display ="none";
+      loader.classList.add("preLoader-hidden");
+
+      loader.addEventListener("transitionend",()=>{
+        document.body.removeChild("loader")
+      })
   })
 
   
