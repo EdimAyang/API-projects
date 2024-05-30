@@ -40,6 +40,14 @@ document.body.classList.toggle("darkTheme");
    
 }
 
+
+const loadd =() =>{
+    window.addEventListener("load", ()=>{
+      loader.style.display ="none";
+  })
+  };
+  loadd()
+
 const filteredRegion = (o) =>{
     let  Label = selected.innerHTML = o.querySelector("label").innerHTML;
         let filteredCountries = data.filter(countries =>{
@@ -62,7 +70,7 @@ const loadCountries =async () => {
     } catch (error) {
         console.log(error);
     }
-    loadd()
+    
 };
 
 loadCountries()
@@ -92,13 +100,7 @@ loadCountries()
         cardsWrapper.innerHTML = htmlString;
    };
 
-   
 
-const loadd =() =>{
-  window.addEventListener("load", ()=>{
-    loader.style.display ="none";
-})
-};
 
 
 searchInput.addEventListener("keyup",(e) =>{
