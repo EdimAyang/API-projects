@@ -46,7 +46,7 @@ const loadd =() =>{
       loader.style.display ="none";
   })
   };
-  loadd()
+  
 
 const filteredRegion = (o) =>{
     let  Label = selected.innerHTML = o.querySelector("label").innerHTML;
@@ -70,7 +70,7 @@ const loadCountries =async () => {
     } catch (error) {
         console.log(error);
     }
-    
+    loadd()
 };
 
 loadCountries()
