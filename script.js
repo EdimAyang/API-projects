@@ -42,13 +42,11 @@ document.body.classList.toggle("darkTheme");
 
 
 
-    window.addEventListener("load", ()=>{
-      loader.classList.add("preLoader-hidden");
-
-      loader.addEventListener("transitionend",()=>{
-        document.body.removeChild("loader")
-      })
-  })
+   window.addEventListener("load", ()=>{
+        loader.classList.add("preLoader-hidden");
+        const opac = document.querySelector(".opac")
+        opac.style.display="none";
+  });
 
   
 
