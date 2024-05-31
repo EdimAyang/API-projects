@@ -155,7 +155,7 @@ input::placeholder{
     margin: 10% auto;
     display: flex;
     flex-direction: column;
-    
+    z-index: 200;
 }
 
 #cardsWrapper2{
@@ -177,7 +177,7 @@ input::placeholder{
     box-shadow: 0 0 30px rgb(0, 0, 0, .2);
     margin-top: 20px;
     color: var(--primary-color);
-
+    z-index:200 ;
 }
 
 #card2{
@@ -486,6 +486,7 @@ span{
         grid-auto-rows: auto;
         column-gap: 35px;
         margin:5% auto;
+        z-index: 200;
     
     }
 
@@ -495,6 +496,7 @@ span{
         border-radius: 10px;
         box-shadow: 0 0 30px rgb(0, 0, 0, .2);
         color: var(--primary-color);
+        z-index: 200;
     }
 
     #cardsWrapper2{
