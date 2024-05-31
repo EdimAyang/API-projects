@@ -289,7 +289,7 @@ span{
     border: 15px solid #dddddddd;
     border-top-color:#7449f5 ;
     border-radius: 50%;
-    animation:loading 0.75s ease infinite;
+    animation:loading 0.20s ease infinite;
 }
 
 @keyframes loading {
@@ -357,7 +357,7 @@ span{
     justify-content: center;
     align-items: center;
     background-color: rgb(0, 0, 0, .9);
-    transition: opacity 0.75s, visibility 0.75s;
+    transition: opacity 0.60s, visibility 0.50s;
     z-index: 100;
     border-radius: 5px;
 }
@@ -374,7 +374,7 @@ span{
     border: 15px solid #dddddddd;
     border-top-color:#7449f5 ;
     border-radius: 50%;
-    animation:loading 0.75s ease infinite;
+    animation:loading 0.70s ease infinite;
     
 }
 
