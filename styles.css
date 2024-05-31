@@ -279,7 +279,7 @@ span{
 
 .preLoader-hidden{
     opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 
 #preLoader::after{
@@ -364,7 +364,7 @@ span{
 
 .preLoader-hidden{
     opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 
 #preLoader::after{
