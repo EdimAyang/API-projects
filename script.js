@@ -91,6 +91,7 @@ loadCountries()
                 <h3 id="country">${countries.name.common}</h3>
                 <p>Population: <span id="population">${countries.population}</span></p>
                 <p>Continent: <span id="region">${countries.region}</span></p>
+                <p>Sub Continent: <span>${countries.subregion}</span></p>
                 <p>Capital: <span id="capital">${countries.capital}</span></p>
             </div>
             </div>
