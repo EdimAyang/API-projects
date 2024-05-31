@@ -16,12 +16,14 @@ const optionList = document.querySelectorAll(".options");
 let loader = document.querySelector("#preLoader");
 const searchFilter = document.querySelector("#search_filter");
 const button = document.querySelector("#btn");
+const darkModeToggle =document.querySelector("#theme");
 let my_url = "/info.html";
+let darkTheme = localStorage.getItem("darkTheme");
 
 
 selected.addEventListener("click", ()=>{
     optionsContainer.classList.toggle("active");
-})
+});
 
 optionList.forEach((o) =>{
     o.addEventListener("click", ()=>{
@@ -30,15 +32,39 @@ optionList.forEach((o) =>{
     filteredRegion(o);
   })
     
-})
+});
 
+const enableDarkMode = () =>{
+    document.body.classList.add("darkTheme")
+
+    localStorage.setItem("darkTheme", "enabled")
+};
+
+const disableDarkMode = () =>{
+    document.body.classList.remove("darkTheme")
+
+    localStorage.setItem("darkTheme", "disabled")
+};
+
+if (darkTheme == "enabled") {
+    enableDarkMode()
+};
+
+darkModeToggle.addEventListener("click", ()=>{
+    darkTheme = localStorage.getItem("darkTheme");
+    if (darkTheme !== "enabled") {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+});
 
    
-const theme = document.getElementById("theme")
-theme.onclick=() =>{
-document.body.classList.toggle("darkTheme");
+//const theme = document.getElementById("theme")
+//theme.onclick=() =>{
+//document.body.classList.toggle("darkTheme");
    
-}
+//}
 
 
 
