@@ -125,6 +125,7 @@ input::placeholder{
     border-radius: 8px;
     position: absolute;
     box-shadow: 0 0 30px rgb(0, 0, 0, .2);
+    z-index: 300;
 }
 
 .select-box .options-container.active{
@@ -451,6 +452,7 @@ span{
         border-radius: 8px;
         position: absolute;
         box-shadow: 0 0 30px rgb(0, 0, 0, .2);
+        z-index: 300;
     }
     
     .select-box .options-container.active{
